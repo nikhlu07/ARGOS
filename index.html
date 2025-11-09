@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARGOS - Evo-Core Landing Page</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="https://raw.githubusercontent.com/nikhlu07/ARGOS/6afae311b142b1a7a9df616a35bc54ab037e04d1/logo.svg">
+
+    <!-- 1. Import Fonts (Space Grotesk, Inter, Roboto Mono) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Roboto+Mono:wght@400&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- 2. Import Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- 3. Import three.js (for 3D Sphere) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- 4. Configure Tailwind with "Evo-Core" Design System -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'absolute-white': '#FFFFFF',
+                        'cyan-volt': '#2EE9E2',
+                        'neural-dark': '#1A1A1A',
+                        'synapse-gray': '#444444',
+                        'matrix-line': '#DCDCDC',
+                        'async-bg': '#F5F5F7',
+                        'evolve-green': '#00B894',
+                        'fallen-red': '#D83A56',
+                        'provisional-amber': '#FFC300',
+                    },
+                    fontFamily: {
+                        heading: ['Space Grotesk', 'sans-serif'],
+                        body: ['Inter', 'sans-serif'],
+                        mono: ['Roboto Mono', 'monospace'],
+                    },
+                    boxShadow: {
+                        'electric-glow': '0 0 20px rgba(46, 233, 226, 0.6)',
+                        'card-shadow': '0px 4px 12px rgba(0, 0, 0, 0.05)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- 5. Custom CSS for 3D Canvas and Syntax Highlighting -->
+    <style>
+        /* Base font settings */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FFFFFF;
+            color: #1A1A1A;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Container for the 3D canvas */
+        #hero-canvas-container {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            min-height: 400px;
+        }
+
+        #hero-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Syntax Highlighting for Code Blocks */
+        .code-keyword { color: #2EE9E2; } /* Cyan-Volt */
+        .code-string { color: #00B894; } /* Evolve-Green */
+        .code-number { color: #FFC300; } /* Provisional-Amber */
+        .code-comment { color: #888888; } /* Lighter Synapse-Gray */
+        .code-function { color: #1A1A1A; } /* Neural-Dark */
+
+        .logo-invert {
+            filter: brightness(0) invert(1); /* Makes the dark SVG white for the footer */
+        }
+    </style>
+</head>
+<body class="bg-absolute-white text-neural-dark font-body">
+
+    <!-- Header -->
+    <header class="absolute top-0 left-0 w-full z-10 py-6">
+        <nav class="container mx-auto px-6 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#">
+                <img src="https://raw.githubusercontent.com/nikhlu07/ARGOS/6afae311b142b1a7a9df616a35bc54ab037e04d1/logo.svg" alt="ARGOS Logo" class="h-8 w-auto">
+            </a>
+
+            <!-- Navigation -->
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#features" class="font-body text-synapse-gray hover:text-cyan-volt transition-colors">Features</a>
+                <a href="#tech" class="font-body text-synapse-gray hover:text-cyan-volt transition-colors">Technology</a>
+                <a href="#start" class="font-body text-synapse-gray hover:text-cyan-volt transition-colors">How it Works</a>
+                <a href="#" class="font-body text-cyan-volt hover:underline">API Reference</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center overflow-hidden">
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+
+            <!-- Hero Text Content -->
+            <div class="z-10 pt-24 md:pt-0">
+                <p class="font-heading font-medium text-cyan-volt">ARGOS (Adaptive Reputation-Gated Oracle System)</p>
+                <h1 class="font-heading font-bold text-4xl sm:text-5xl lg:text-6xl text-neural-dark mt-4">
+                    A Self-Evolving, Swarm-Intelligence Oracle Network.
+                </h1>
+                <p class="text-xl text-synapse-gray mt-6">
+                    Where competing synthetic minds battle for dominance, and only the most accurate survive.
+                </p>
+                <div class="mt-10 flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <!-- Primary Button -->
+                    <a href="#start"
+                       class="inline-block bg-cyan-volt text-neural-dark font-heading font-medium py-3 px-8 rounded-lg text-center transition-all duration-300 hover:shadow-electric-glow hover:brightness-105 transform hover:-translate-y-0.5">
+                        Quick Start
+                    </a>
+                    <!-- Secondary Button -->
+                    <a href="#"
+                       class="inline-block bg-absolute-white text-cyan-volt border border-cyan-volt font-heading font-medium py-3 px-8 rounded-lg text-center transition-all duration-300 hover:bg-cyan-volt hover:text-neural-dark">
+                        Documentation
+                    </a>
+                </div>
+            </div>
+
+            <!-- Hero 3D Sphere -->
+            <div id="hero-canvas-container" class="z-0">
+                <canvas id="hero-canvas"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section (ION Nodes / Scenarios) -->
+    <section id="features" class="py-24 bg-async-bg">
+        <div class="container mx-auto px-6">
+            <h2 class="text-center font-heading font-bold text-4xl text-neural-dark">An Ecosystem of Competing IONs</h2>
+            <p class="text-center text-lg text-synapse-gray mt-4 max-w-2xl mx-auto">
+                ARGOS is a "nervous system" of Intelligent Oracle Nodes (IONs) that stake influence to provisionally answer any query.
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-8 mt-16">
+                <!-- Card 1 -->
+                <div class="bg-absolute-white border border-matrix-line rounded-lg shadow-card-shadow transition-all duration-300 hover:border-cyan-volt p-8">
+                    <h3 class="font-heading font-medium text-2xl text-neural-dark">Evolve or Die</h3>
+                    <p class="text-synapse-gray mt-4">
+                        IONs that provide "truthful" data are rewarded, increasing their influence. Those that are successfully challenged ("The Fallen") are slashed and lose influence.
+                    </p>
+                </div>
+                <!-- Card 2 -->
+                <div class="bg-absolute-white border border-matrix-line rounded-lg shadow-card-shadow transition-all duration-300 hover:border-cyan-volt p-8">
+                    <h3 class="font-heading font-medium text-2xl text-neural-dark">Cryptoeconomic Security</h3>
+                    <p class="text-synapse-gray mt-4">
+                        Anchored in UMA's optimistic oracle, the system is secured by cryptoeconomic incentives. The "cost of corruption" always outweighs the "profit from corruption".
+                    </p>
+                </div>
+                <!-- Card 3 -->
+                <div class="bg-absolute-white border border-matrix-line rounded-lg shadow-card-shadow transition-all duration-300 hover:border-cyan-volt p-8">
+                    <h3 class="font-heading font-medium text-2xl text-neural-dark">Swarm Intelligence</h3>
+                    <p class="text-synapse-gray mt-4">
+                        Like a flock of birds or a colony of ants, the collective "swarm" of IONs produces an intelligent, adaptive, and self-healing data network far smarter than any single node.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technology Matrix Section (Table) -->
+    <section id="tech" class="py-24">
+        <div class="container mx-auto px-6">
+            <h2 class="text-center font-heading font-bold text-4xl text-neural-dark">Evolutionary Matrix</h2>
+            <p class="text-center text-lg text-synapse-gray mt-4 max-w-2xl mx-auto">
+                A real-time ledger of the evolutionary loop. Victors are rewarded, and The Fallen are slashed.
+            </p>
+
+            <div class="bg-absolute-white border border-matrix-line rounded-lg shadow-card-shadow mt-12 overflow-hidden">
+                <div class="overflow-x-auto">
+                    <table class="w-full min-w-[600px]">
+                        <thead>
+                            <tr class="border-b border-matrix-line bg-async-bg">
+                                <th class="p-4 text-left font-body font-medium text-synapse-gray uppercase text-xs tracking-wider">ION Hash</th>
+                                <th class="p-4 text-left font-body font-medium text-synapse-gray uppercase text-xs tracking-wider">Query</th>
+                                <th class="p-4 text-left font-body font-medium text-synapse-gray uppercase text-xs tracking-wider">Influence Staked</th>
+                                <th class="p-4 text-left font-body font-medium text-synapse-gray uppercase text-xs tracking-wider">Outcome</th>
+                                <th class="p-4 text-left font-body font-medium text-synapse-gray uppercase text-xs tracking-wider">Timestamp</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-matrix-line">
+                            <tr>
+                                <td class="p-4 font-mono text-neural-dark text-sm">0x2ee...9e2</td>
+                                <td class="p-4 font-body text-neural-dark">price(ETH/USD)</td>
+                                <td class="p-4 font-body text-neural-dark">1,500.00</td>
+                                <td class="p-4 font-body font-medium text-evolve-green">REWARD</td>
+                                <td class="p-4 font-body text-synapse-gray">...30s ago</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-mono text-neural-dark text-sm">0xd83...a56</td>
+                                <td class="p-4 font-body text-neural-dark">weather(NYC)</td>
+                                <td class="p-4 font-body text-neural-dark">800.00</td>
+                                <td class="p-4 font-body font-medium text-fallen-red">SLASH</td>
+                                <td class="p-4 font-body text-synapse-gray">...1m ago</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-mono text-neural-dark text-sm">0xffc...300</td>
+                                <td class="p-4 font-body text-neural-dark">sports(WorldCup)</td>
+                                <td class="p-4 font-body text-neural-dark">2,200.00</td>
+                                <td class="p-4 font-body font-medium text-provisional-amber">... PROVISIONAL</td>
+                                <td class="p-4 font-body text-synapse-gray">...5m ago</td>
+                            </tr>
+                            <tr>
+                                <td class="p-4 font-mono text-neural-dark text-sm">0x444...444</td>
+                                <td class="p-4 font-body text-neural-dark">price(BTC/USD)</td>
+                                <td class="p-4 font-body text-neural-dark">5,000.00</td>
+                                <td class="p-4 font-body font-medium text-evolve-green">✅ REWARD</td>
+                                <td class="p-4 font-body text-synapse-gray">...8m ago</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works (Code Block) -->
+    <section id="start" class="py-24 bg-async-bg">
+        <div class="container mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h2 class="font-heading font-bold text-4xl text-neural-dark">Instant, Provisional Reality</h2>
+                <p class="text-lg text-synapse-gray mt-6">
+                    Querying ARGOS is simple. Stake influence to back a provisional answer, which becomes final after the challenge period.
+                </p>
+                <p class="text-lg text-synapse-gray mt-4">
+                    Other IONs are incentivized to challenge incorrect data, ensuring the "blockchain truth" is always found. This example shows a simple price feed query.
+                </p>
+                <div class="mt-8">
+                    <a href="#" class="bg-cyan-volt text-neural-dark font-heading font-medium py-3 px-8 rounded-lg transition-all duration-300 hover:shadow-electric-glow hover:brightness-105">
+                        Quick Start Guide
+                    </a>
+                </div>
+            </div>
+
+            <!-- Code Block -->
+            <div class="bg-absolute-white p-6 rounded-lg shadow-card-shadow border border-matrix-line">
+                <pre class="font-mono text-sm text-synapse-gray overflow-x-auto"><code class="language-python">
+<span class="code-comment"># 1. A query is submitted to the ARGOS network</span>
+<span class="code-keyword">async def</span> <span class="code-function">get_price</span>(asset, timestamp):
+    <span class="code-function">log</span>(<span class="code-string">"Querying ARGOS for {asset}..."</span>)
+
+    <span class="code-keyword">return await</span> argos.query(
+        <span class="code-string">f"price(asset={asset}, timestamp={timestamp})"</span>,
+
+        <span class="code-comment"># Stake 'influence' to back this provisional answer</span>
+        stake=<span class="code-number">1000</span>,
+
+        <span class="code-comment"># Wait 1 hour for challenges</span>
+        challenge_period=<span class="code-number">3600</span>
+    )
+
+<span class="code-comment"># 2. Competing IONs battle to find the truth</span>
+<span class="code-comment"># 3. 'Victors' are rewarded, 'The Fallen' are slashed</span>
+<span class="code-keyword">result</span> = <span class="code-keyword">await</span> <span class="code-function">get_price</span>(<span class="code-string">"ETH"</span>, <span class="code-number">1678886400</span>)
+<span class="code-function">print</span>(<span class="code-string">f"Provisional Price: {result}"</span>)
+</code></pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-16 bg-neural-dark">
+        <div class="container mx-auto px-6 text-center">
+            <a href="#">
+                <img src="https://raw.githubusercontent.com/nikhlu07/ARGOS/6afae311b142b1a7a9df616a35bc54ab037e04d1/logo.svg" alt="ARGOS Logo" class="h-9 w-auto mx-auto logo-invert">
+            </a>
+            <p class="text-synapse-gray mt-4 max-w-lg mx-auto">
+                A Self-Evolving, Swarm-Intelligence Oracle Network.
+            </p>
+            <div class="mt-8 flex justify-center space-x-6">
+                <a href="#" class="text-matrix-line hover:text-cyan-volt transition-colors">Documentation</a>
+                <a href="#" class="text-matrix-line hover:text-cyan-volt transition-colors">API</a>
+                <a href="#" class="text-matrix-line hover:text-cyan-volt transition-colors">Github</a>
+                <a href="#" class="text-matrix-line hover:text-cyan-volt transition-colors">Community</a>
+            </div>
+            <p class="text-synapse-gray text-sm mt-10">© 2025 ARGOS Protocol. All rights reserved.</p>
+        </div>
+    </footer>
+
+
+    <!-- JavaScript for 3D Sphere -->
+    <script>
+        let scene, camera, renderer, particles;
+        let mouseX = 0, mouseY = 0;
+        const container = document.getElementById('hero-canvas-container');
+        const canvas = document.getElementById('hero-canvas');
+
+        function init() {
+            // Scene
+            scene = new THREE.Scene();
+
+            // Camera
+            camera = new THREE.PerspectiveCamera(75, container.clientWidth / container.clientHeight, 0.1, 1000);
+            camera.position.z = 25;
+
+            // Renderer
+            renderer = new THREE.WebGLRenderer({
+                canvas: canvas,
+                antialias: true,
+                alpha: true // Transparent background
+            });
+            renderer.setPixelRatio(window.devicePixelRatio);
+            renderer.setSize(container.clientWidth, container.clientHeight);
+            renderer.setClearColor(0x000000, 0); // Transparent
+
+            // Particle Sphere
+            const geometry = new THREE.BufferGeometry();
+            const vertices = [];
+            const colors = [];
+            const numParticles = 8000;
+            const radius = 15;
+
+            const colorGray = new THREE.Color(0x444444); // Synapse-Gray
+            const colorCyan = new THREE.Color(0x2EE9E2); // Cyan-Volt
+
+            for (let i = 0; i < numParticles; i++) {
+                // Spherical coordinates
+                const phi = Math.acos(-1 + (2 * i) / numParticles);
+                const theta = Math.sqrt(numParticles * Math.PI) * phi;
+
+                // Add slight randomness to radius for a "cloud" look
+                const r = radius + (Math.random() - 0.5) * 2;
+
+                const x = r * Math.cos(theta) * Math.sin(phi);
+                const y = r * Math.sin(theta) * Math.sin(phi);
+                const z = r * Math.cos(phi);
+                vertices.push(x, y, z);
+
+                // Assign colors
+                if (Math.random() > 0.95) { // 5% of particles are Cyan-Volt
+                    colors.push(colorCyan.r, colorCyan.g, colorCyan.b);
+                } else {
+                    colors.push(colorGray.r, colorGray.g, colorGray.b);
+                }
+            }
+
+            geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
+            geometry.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
+
+            const material = new THREE.PointsMaterial({
+                size: 0.05, // Small dot size
+                vertexColors: true,
+                sizeAttenuation: true
+            });
+
+            particles = new THREE.Points(geometry, material);
+            scene.add(particles);
+
+            // Event Listeners
+            document.addEventListener('mousemove', onMouseMove, false);
+            window.addEventListener('resize', onWindowResize, false);
+        }
+
+        function onMouseMove(event) {
+            // Normalize mouse position (-1 to 1)
+            mouseX = (event.clientX / window.innerWidth) * 2 - 1;
+            mouseY = -(event.clientY / window.innerHeight) * 2 + 1;
+        }
+
+        function onWindowResize() {
+            camera.aspect = container.clientWidth / container.clientHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(container.clientWidth, container.clientHeight);
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+
+            // Subtle base rotation
+            const time = Date.now() * 0.0001;
+            particles.rotation.y = time * 0.5;
+
+            // Mouse interaction: Tilt the sphere
+            particles.rotation.x = (mouseY * 0.2); // Tilt up/down
+            particles.rotation.y += (mouseX * 0.2); // Add mouse x to base rotation
+
+            renderer.render(scene, camera);
+        }
+
+        init();
+        animate();
+    </script>
+
+</body>
+</html>
