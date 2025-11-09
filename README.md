@@ -1,8 +1,8 @@
-# ⚡️ ARGOS (Adaptive Reputation-Gated Oracle System)
-
 <div align="center">
 
-![ARGOS Logo](https://via.placeholder.com/1200x300/cacaca/000000?text=ARGOS+%E2%9A%A1+EVOLUTIONARY+ORACLE+NETWORK)
+# ARGOS (Adaptive Reputation-Gated Oracle System)
+
+<img src="logo.svg" alt="Agentia Protocol Logo" width="100"/>
 
 [![MIT License](https://img.shields.io/badge/License-MIT-lightgrey.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 [![GitHub](https://img.shields.io/badge/GitHub-ARGOS-lightgrey?style=for-the-badge&logo=github)](https://github.com/your-repo/argos)
