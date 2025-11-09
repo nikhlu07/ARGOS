@@ -2,12 +2,12 @@
 
 <div align="center">
 
-![ARGOS Logo](https://via.placeholder.com/1200x300/0a0e27/00ff88?text=ARGOS+%E2%9A%A1+EVOLUTIONARY+ORACLE+NETWORK)
+![ARGOS Logo](https://via.placeholder.com/1200x300/cacaca/000000?text=ARGOS+%E2%9A%A1+EVOLUTIONARY+ORACLE+NETWORK)
 
-[![MIT License](https://img.shields.io/badge/License-MIT-00ff88.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
-[![GitHub](https://img.shields.io/badge/GitHub-ARGOS-00ff88?style=for-the-badge&logo=github)](https://github.com/your-repo/argos)
-[![Discord](https://img.shields.io/badge/Discord-Join_Swarm-00ff88?style=for-the-badge&logo=discord)](https://discord.gg/YOUR_INVITE)
-[![Status](https://img.shields.io/badge/Status-Genesis_Phase-ff0088?style=for-the-badge)](https://github.com/your-repo/argos)
+[![MIT License](https://img.shields.io/badge/License-MIT-lightgrey.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
+[![GitHub](https://img.shields.io/badge/GitHub-ARGOS-lightgrey?style=for-the-badge&logo=github)](https://github.com/your-repo/argos)
+[![Discord](https://img.shields.io/badge/Discord-Join_Swarm-lightgrey?style=for-the-badge&logo=discord)](https://discord.gg/YOUR_INVITE)
+[![Status](https://img.shields.io/badge/Status-Genesis_Phase-lightgrey?style=for-the-badge)](https://github.com/your-repo/argos)
 
 **A self-evolving, swarm-intelligence oracle network. Born from the intersection of cryptoeconomics and emergent AI, it creates a living nervous system for blockchain truth—where competing synthetic minds battle for dominance, and only the most accurate survive.**
 
@@ -18,8 +18,6 @@
 ---
 
 ## 🌌 The Oracle Singularity Problem
-
-<img align="right" width="400" src="https://media.giphy.com/media/3o7btPCcdNniyf0ArS/giphy.gif" alt="Network visualization">
 
 In the architecture of decentralized finance, oracles are the sensory organs—the bridge between blockchain determinism and the chaos of reality. But they're fundamentally broken.
 
@@ -34,8 +32,6 @@ The deeper problem? **Oracles don't evolve.** Each query is answered in isolatio
 ## 💡 The Solution: Darwinian Truth Discovery
 
 <div align="center">
-
-![Truth Discovery](https://media.giphy.com/media/26tn33aiTi1jkl6H6/giphy.gif)
 
 </div>
 
@@ -119,12 +115,12 @@ graph LR
     E -->|48 hours| F[🧬 EVOLVE<br/>Reward/Slash]
     F -->|learning| A
     
-    style A fill:#0a0e27,stroke:#00ff88,color:#00ff88
-    style B fill:#0a0e27,stroke:#00ff88,color:#00ff88
-    style C fill:#0a0e27,stroke:#ff0088,color:#ff0088
-    style D fill:#0a0e27,stroke:#00ff88,color:#00ff88
-    style E fill:#0a0e27,stroke:#00ccff,color:#00ccff
-    style F fill:#0a0e27,stroke:#ff0088,color:#ff0088
+    style A 
+    style B 
+    style C 
+    style D 
+    style E 
+    style F 
 ```
 
 </div>
@@ -613,9 +609,9 @@ We're building a system where truth isn't declared by authority, but *discovered
 
 <div align="center">
 
-[![GitHub Issues](https://img.shields.io/github/issues/your-repo/argos?style=for-the-badge&logo=github&color=00ff88)](https://github.com/your-repo/argos/issues)
-[![GitHub Discussions](https://img.shields.io/github/discussions/your-repo/argos?style=for-the-badge&logo=github&color=00ff88)](https://github.com/your-repo/argos/discussions)
-[![Discord](https://img.shields.io/discord/YOUR_SERVER_ID?style=for-the-badge&logo=discord&color=00ff88&label=Discord)](https://discord.gg/YOUR_INVITE)
+[![GitHub Issues](https://img.shields.io/github/issues/your-repo/argos?style=for-the-badge&logo=github)](https://github.com/your-repo/argos/issues)
+[![GitHub Discussions](https://img.shields.io/github/discussions/your-repo/argos?style=for-the-badge&logo=github)](https://github.com/your-repo/argos/discussions)
+[![Discord](https://img.shields.io/discord/YOUR_SERVER_ID?style=for-the-badge&logo=discord&label=Discord)](https://discord.gg/YOUR_INVITE)
 
 </div>
 
@@ -645,7 +641,7 @@ Truth should be free.
 
 See [LICENSE](LICENSE) file for details.
 
-![License](https://img.shields.io/badge/License-MIT-00ff88.svg?style=for-the-badge)
+![License](https://img.shields.io/badge/License-MIT-lightgrey.svg?style=for-the-badge)
 
 </div>
 
@@ -653,12 +649,12 @@ See [LICENSE](LICENSE) file for details.
 
 <div align="center">
 
-![Footer](https://via.placeholder.com/1200x100/0a0e27/00ff88?text=ARGOS+%E2%80%A2+WHERE+TRUTH+EVOLVES)
+![Footer](https://via.placeholder.com/1200x100/cacaca/000000?text=ARGOS+%E2%80%A2+WHERE+TRUTH+EVOLVES)
 
 ### *"In the beginning, there was data. Then there was truth. Now there is ARGOS—where data evolves into truth, and truth evolves into intelligence."*
 
-[![Twitter Follow](https://img.shields.io/twitter/follow/argos_oracle?style=for-the-badge&logo=twitter&color=00ff88)](https://twitter.com/argos_oracle)
-[![GitHub Org](https://img.shields.io/badge/GitHub-ARGOS_Labs-00ff88?style=for-the-badge&logo=github)](https://github.com/argos-labs)
+[![Twitter Follow](https://img.shields.io/twitter/follow/argos_oracle?style=for-the-badge&logo=twitter)](https://twitter.com/argos_oracle)
+[![GitHub Org](https://img.shields.io/badge/GitHub-ARGOS_Labs-lightgrey?style=for-the-badge&logo=github)](https://github.com/argos-labs)
 
 **⚡ Built with UMA • Powered by Evolution • Secured by Cryptoeconomics ⚡**
 
