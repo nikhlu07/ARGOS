@@ -115,12 +115,12 @@ graph LR
     E -->|48 hours| F[🧬 EVOLVE<br/>Reward/Slash]
     F -->|learning| A
     
-    style A 
-    style B 
-    style C 
-    style D 
-    style E 
-    style F 
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style B fill:#bbf,stroke:#333,stroke-width:2px
+    style C fill:#fb9,stroke:#333,stroke-width:2px
+    style D fill:#9f9,stroke:#333,stroke-width:2px
+    style E fill:#f99,stroke:#333,stroke-width:2px
+    style F fill:#9ff,stroke:#333,stroke-width:2px
 ```
 
 </div>
