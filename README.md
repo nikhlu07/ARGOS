@@ -3,7 +3,7 @@
 # ARGOS (Adaptive Reputation-Gated Oracle System)
 
 <img src="logo.svg" alt="Agentia Protocol Logo" width="100"/>
-
+<br/>
 [![MIT License](https://img.shields.io/badge/License-MIT-lightgrey.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 [![GitHub](https://img.shields.io/badge/GitHub-ARGOS-lightgrey?style=for-the-badge&logo=github)](https://github.com/your-repo/argos)
 [![Discord](https://img.shields.io/badge/Discord-Join_Swarm-lightgrey?style=for-the-badge&logo=discord)](https://discord.gg/YOUR_INVITE)
