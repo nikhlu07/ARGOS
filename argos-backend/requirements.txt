@@ -1,0 +1,10 @@
+langchain
+crewai
+scrapy
+ethers.py
+web3
+requests
+beautifulsoup4
+textblob
+python-dotenv
+openai
