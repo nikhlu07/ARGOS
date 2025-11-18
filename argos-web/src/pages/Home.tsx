@@ -326,6 +326,11 @@ export default function Home() {
                   Read Documentation
                 </Button>
               </Link>
+              <Link to="/pitch-deck">
+                <Button size="lg" variant="outline">
+                  View Pitch Deck
+                </Button>
+              </Link>
             </div>
           </motion.div>
         </div>
