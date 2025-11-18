@@ -651,8 +651,6 @@ See [LICENSE](LICENSE) file for details.
 
 <div align="center">
 
-![Footer](https://via.placeholder.com/1200x100/cacaca/000000?text=ARGOS+%E2%80%A2+WHERE+TRUTH+EVOLVES)
-
 ### *"In the beginning, there was data. Then there was truth. Now there is ARGOS—where data evolves into truth, and truth evolves into intelligence."*
 
 [![Twitter Follow](https://img.shields.io/twitter/follow/argos_oracle?style=for-the-badge&logo=twitter)](https://twitter.com/argos_oracle)

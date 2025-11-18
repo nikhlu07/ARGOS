@@ -2,7 +2,13 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+  Navigate,
+  useLocation,
+} from "react-router-dom";
 import { AuthProvider, useAuth } from "./contexts/AuthContext";
 import { DataProvider } from "./contexts/DataContext";
 import { AuthGuard } from "./components/AuthGuard";
@@ -17,15 +23,18 @@ import Scenario from "./pages/Scenario";
 import Docs from "./pages/Docs";
 import Profile from "./pages/Profile";
 import NotFound from "./pages/NotFound";
+import PitchDeck from "./pages/PitchDeck";
 
 const queryClient = new QueryClient();
 
 function AppContent() {
   const { isAuthenticated } = useAuth();
+  const location = useLocation();
+  const isPitchDeck = location.pathname === "/pitch-deck";
 
   return (
     <>
-      <Header />
+      {!isPitchDeck && <Header />}
       <Routes>
         <Route path="/" element={<Home />} />
         <Route
@@ -66,9 +75,10 @@ function AppContent() {
             </AuthGuard>
           }
         />
+        <Route path="/pitch-deck" element={<PitchDeck />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <Footer />
+      {!isPitchDeck && <Footer />}
     </>
   );
 }
