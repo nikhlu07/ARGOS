@@ -1,0 +1,51 @@
+# Global
+.DS_Store
+Thumbs.db
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+
+# Env files
+.env
+.env.*
+argos-backend/.env
+argos-web/.env
+
+# Node modules
+node_modules/
+argos-backend/node_modules/
+argos-web/node_modules/
+
+# Build outputs
+/dist/
+/build/
+argos-web/dist/
+argos-web/build/
+
+# Vite/Cache
+.vite/
+argos-web/.vite/
+
+# Hardhat artifacts and cache
+argos-backend/artifacts/
+argos-backend/cache/
+
+# Python
+__pycache__/
+*.pyc
+
+# Coverage
+coverage/
+
+# IDE
+.vscode/
+.idea/
+
+# Misc
+*.swp
+*.swo
+
+# Generated contract artifacts copied to frontend
+argos-web/src/contracts/contract-address.json
+argos-web/src/contracts/AggregatorCore.json

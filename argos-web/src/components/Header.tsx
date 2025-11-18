@@ -13,9 +13,11 @@ import { Activity, User, Settings, LogOut, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import logo from '/logo.svg'; // Import the logo SVG
+import { useWeb3 } from '@/contexts/Web3Context';
 
 export const Header = () => {
   const { isAuthenticated, user, logout } = useAuth();
+  const { isWalletConnected, address, chainId, connectWallet, disconnectWallet } = useWeb3();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
@@ -25,6 +27,8 @@ export const Header = () => {
     { to: '/scenario', label: 'Scenario', public: true },
     { to: '/docs', label: 'Docs', public: true },
   ];
+
+  const shortAddr = address ? `${address.slice(0, 6)}...${address.slice(-4)}` : '';
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
@@ -108,6 +112,15 @@ export const Header = () => {
               </Link>
             </>
           )}
+
+          {/* Wallet connect */}
+          {isWalletConnected ? (
+            <Button variant="outline" className="font-mono" onClick={disconnectWallet} title={`Chain: ${chainId ?? 'unknown'}`}>
+              {shortAddr}
+            </Button>
+          ) : (
+            <Button variant="secondary" onClick={connectWallet}>Connect Wallet</Button>
+          )}
         </div>
 
         {/* Mobile Menu Button */}
@@ -173,6 +186,19 @@ export const Header = () => {
                   </Button>
                 </div>
               )}
+
+              {/* Mobile wallet connect */}
+              <div className="flex flex-col gap-2 pt-2 border-t border-border">
+                {isWalletConnected ? (
+                  <Button variant="outline" className="w-full font-mono" onClick={() => { disconnectWallet(); setMobileMenuOpen(false); }}>
+                    {shortAddr}
+                  </Button>
+                ) : (
+                  <Button className="w-full" onClick={() => { connectWallet(); setMobileMenuOpen(false); }}>
+                    Connect Wallet
+                  </Button>
+                )}
+              </div>
             </nav>
           </motion.div>
         )}

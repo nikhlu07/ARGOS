@@ -15,7 +15,7 @@ async function main() {
 
   // 1. Save the contract's address to a file
   // This is useful for the frontend and agents to know where the contract is.
-  const contractDir = __dirname + "/../argos-web/src/contracts";
+  const contractDir = __dirname + "/../../argos-web/src/contracts";
   if (!fs.existsSync(contractDir)) {
     fs.mkdirSync(contractDir, { recursive: true });
   }
@@ -35,7 +35,7 @@ async function main() {
   console.log("Contract ABI saved to argos-web/src/contracts/AggregatorCore.json");
 
   // Also save the ABI for the Python agents
-  const agentContractDir = __dirname + "/../argos-backend/";
+  const agentContractDir = __dirname + "/..";
   fs.writeFileSync(
     agentContractDir + "/contract_abi.json",
     JSON.stringify(contractArtifact.abi)
@@ -44,7 +44,7 @@ async function main() {
 
 
   // 3. Update the .env file with the contract address
-  const envPath = __dirname + "/../argos-backend/.env";
+  const envPath = __dirname + "/../../.env";
   if (fs.existsSync(envPath)) {
     let envContent = fs.readFileSync(envPath, "utf8");
     if (envContent.includes("CONTRACT_ADDRESS")) {

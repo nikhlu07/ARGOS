@@ -11,6 +11,7 @@ import {
 } from "react-router-dom";
 import { AuthProvider, useAuth } from "./contexts/AuthContext";
 import { DataProvider } from "./contexts/DataContext";
+import { Web3Provider } from "./contexts/Web3Context";
 import { AuthGuard } from "./components/AuthGuard";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
@@ -88,11 +89,13 @@ const App = () => (
     <TooltipProvider>
       <BrowserRouter>
         <AuthProvider>
-          <DataProvider>
-            <Toaster />
-            <Sonner />
-            <AppContent />
-          </DataProvider>
+          <Web3Provider>
+            <DataProvider>
+              <Toaster />
+              <Sonner />
+              <AppContent />
+            </DataProvider>
+          </Web3Provider>
         </AuthProvider>
       </BrowserRouter>
     </TooltipProvider>
