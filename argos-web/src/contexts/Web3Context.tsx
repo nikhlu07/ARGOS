@@ -78,7 +78,8 @@ export const Web3Provider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const contractConfig = useMemo(() => {
     try {
-      const addr = (contractAddressJson as any).address as string;
+      const envAddr = (import.meta as any).env?.VITE_CONTRACT_ADDRESS as string | undefined;
+      const addr = (envAddr && envAddr.startsWith('0x') ? envAddr : (contractAddressJson as any).address) as string;
       const abi = (aggregatorArtifact as any).abi as any[];
       if (!addr || !abi) return null;
       return { address: addr as `0x${string}`, abi };
