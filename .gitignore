@@ -46,6 +46,6 @@ coverage/
 *.swp
 *.swo
 
-# Generated contract artifacts copied to frontend
-argos-web/src/contracts/contract-address.json
-argos-web/src/contracts/AggregatorCore.json
+# Frontend artifacts and local addresses
+# Allow committing public ABI and placeholder addresses used for builds
+# (do not commit private keys or .env)
