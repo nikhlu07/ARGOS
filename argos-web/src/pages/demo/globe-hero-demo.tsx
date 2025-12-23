@@ -19,7 +19,7 @@ export default function DotGlobeHeroDemo() {
       <div className="absolute inset-0 bg-gradient-to-t from-background/50 via-transparent to-background/30" />
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse" />
       <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-primary/3 rounded-full blur-3xl animate-pulse" />
-      
+
       <div className="relative z-10 text-center space-y-12 max-w-5xl mx-auto px-6 py-12">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -27,7 +27,7 @@ export default function DotGlobeHeroDemo() {
           transition={{ duration: 0.8 }}
           className="space-y-8"
         >
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -35,12 +35,12 @@ export default function DotGlobeHeroDemo() {
           >
             <div className="absolute inset-0 rounded-full bg-primary animate-pulse" />
             <div className="w-2 h-2 bg-primary rounded-full animate-ping" />
-            <span className="relative z-10 text-sm font-bold text-black tracking-wider uppercase">GLOBAL NETWORK</span>
+            <span className="relative z-10 text-sm font-bold text-black tracking-wider uppercase">LIVE NETWORK</span>
             <div className="w-2 h-2 bg-primary rounded-full animate-ping animation-delay-500" />
           </motion.div>
-          
+
           <div className="space-y-6">
-            <motion.h1 
+            <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.3 }}
@@ -48,15 +48,15 @@ export default function DotGlobeHeroDemo() {
               style={{ fontFamily: 'Inter, system-ui, sans-serif' }}
             >
               <span className="block font-light text-foreground/70 mb-3 text-4xl md:text-6xl lg:text-7xl">
-                Connect
+                Oracle Predictions in
               </span>
               <span className="block relative">
                 <span className="bg-gradient-to-br from-primary via-primary to-primary/60 bg-clip-text text-transparent font-black relative z-10">
-                  the World
+                  340 Milliseconds
                 </span>
-                <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-primary/60 bg-clip-text text-transparent font-black blur-2xl opacity-50 scale-105" 
-                     style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-                  the World
+                <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary to-primary/60 bg-clip-text text-transparent font-black blur-2xl opacity-50 scale-105"
+                  style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+                  340 Milliseconds
                 </div>
                 <motion.div
                   initial={{ width: 0 }}
@@ -67,22 +67,23 @@ export default function DotGlobeHeroDemo() {
               </span>
             </motion.h1>
           </div>
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.8 }}
             className="max-w-3xl mx-auto space-y-4"
           >
-            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed font-medium" 
-               style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
-              Experience real-time global connectivity with our{" "}
+            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed font-medium"
+              style={{ fontFamily: 'Inter, system-ui, sans-serif' }}>
+              The first oracle network that delivers{" "}
               <span className="text-foreground font-semibold bg-gradient-to-r from-primary/20 to-primary/10 px-2 py-1 rounded-md">
-                distributed network infrastructure
+                instant provisional results
               </span>
+              {" "}backed by cryptoeconomic security
             </p>
             <p className="text-lg text-muted-foreground/80 leading-relaxed">
-              Monitor data flows, track performance, and scale across continents with unprecedented reliability.
+              Swarm intelligence meets evolutionary consensus. Get predictions in milliseconds, verified by UMA's economic truth engine.
             </p>
           </motion.div>
         </motion.div>

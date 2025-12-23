@@ -13,22 +13,22 @@ export default function Home() {
     {
       icon: Zap,
       title: 'Instant Provisional Results',
-      description: 'Get predictions in 340ms with high confidence. Markets react before the final verdict.',
+      description: 'Get predictions in 340ms with measurable confidence scores. Markets can react immediately while security settles in the background. No more waiting for finality.',
     },
     {
       icon: Shield,
       title: 'Cryptoeconomic Security',
-      description: 'UMA provides final arbitration. Wrong predictions are slashed. Truth always wins.',
+      description: "UMA's optimistic oracle provides final arbitration after 48 hours. Incorrect predictions are slashed. Economic incentives guarantee truth prevails.",
     },
     {
       icon: TrendingUp,
       title: 'Self-Improving Network',
-      description: 'Nodes evolve through natural selection. Winners gain reputation, losers lose stake.',
+      description: 'ION nodes compete and evolve through natural selection. Accurate predictors gain reputation and rewards. Poor performers lose stake and influence. The network gets smarter over time.',
     },
     {
       icon: Brain,
       title: 'Swarm Intelligence',
-      description: 'Weighted consensus from specialized agents. Diversity creates resilience.',
+      description: 'Multiple independent ION nodes analyze each query in parallel. Weighted consensus aggregates their predictions based on historical accuracy. Diversity of approaches creates resilience against manipulation.',
     },
   ];
 
@@ -36,31 +36,31 @@ export default function Home() {
     {
       phase: '1. SIGNAL',
       title: 'Query Broadcast',
-      description: 'Question reaches the swarm within milliseconds',
+      description: 'Your question is broadcast to the entire ION swarm instantly',
       time: 'T+0ms',
     },
     {
       phase: '2. SWARM',
       title: 'Parallel Prediction',
-      description: 'ION nodes analyze and submit weighted predictions',
+      description: 'Hundreds of ION nodes race to analyze data and submit their predictions',
       time: 'T+100-340ms',
     },
     {
       phase: '3. CONSENSUS',
       title: 'Instant Aggregation',
-      description: 'Network calculates confidence-weighted consensus',
+      description: "The network aggregates predictions, weighted by each node's reputation and confidence",
       time: 'T+340ms',
     },
     {
       phase: '4. ANCHOR',
       title: 'UMA Verification',
-      description: 'Economic consensus validates the truth',
+      description: "UMA's optimistic oracle finalizes the result through economic consensus",
       time: 'T+48h',
     },
     {
       phase: '5. EVOLVE',
       title: 'Reputation Update',
-      description: 'Nodes are rewarded or slashed. The network learns.',
+      description: 'Accurate nodes gain reputation and rewards. Wrong predictions are slashed. The swarm evolves.',
       time: 'T+48h+1m',
     },
   ];
@@ -69,22 +69,22 @@ export default function Home() {
     {
       icon: Activity,
       title: 'Neural Layer',
-      description: 'ION nodes - Independent Oracle Neurons that predict, compete, and evolve',
+      description: 'Independent Oracle Neurons (IONs) - autonomous agents that predict outcomes, compete for accuracy, and evolve through economic selection',
     },
     {
       icon: Target,
       title: 'Consensus Layer',
-      description: 'Weighted aggregation creates provisional results with measurable confidence',
+      description: 'Aggregates predictions from all IONs, weighted by reputation and confidence, to produce instant provisional results you can act on',
     },
     {
       icon: Shield,
       title: 'Anchor Layer',
-      description: 'UMA provides cryptoeconomic finality for dispute resolution',
+      description: "UMA's optimistic oracle provides cryptoeconomic finality - the ultimate source of truth backed by economic guarantees",
     },
     {
       icon: TrendingUp,
       title: 'Evolution Layer',
-      description: 'Reputation system rewards accuracy and punishes deception',
+      description: 'Tracks performance over time, rewarding accurate predictions and slashing incorrect ones - driving continuous network improvement',
     },
   ];
 
@@ -102,9 +102,9 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="font-display text-4xl font-bold mb-4">The Oracle Singularity Problem</h2>
+            <h2 className="font-display text-4xl font-bold mb-4">The Oracle Trilemma</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Traditional oracles force you to choose between speed and security
+              Fast, secure, and decentralized. Traditional oracles make you pick two.
             </p>
           </motion.div>
 
@@ -119,8 +119,7 @@ export default function Home() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Systems like UMA provide strong cryptoeconomic guarantees but require 48-hour dispute windows. 
-                  Markets can't wait.
+                  Cryptoeconomic oracles like UMA offer bulletproof security through economic consensus, but their 48-hour dispute windows make them impractical for time-sensitive applications. DeFi markets need answers now.
                 </p>
               </CardContent>
             </Card>
@@ -135,7 +134,7 @@ export default function Home() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">
-                  Centralized price feeds deliver instant data but create single points of failure and manipulation vectors.
+                  Centralized oracles deliver millisecond latency but introduce trust assumptions and single points of failure. One compromised node can manipulate billions in on-chain value.
                 </p>
               </CardContent>
             </Card>
@@ -149,7 +148,7 @@ export default function Home() {
           >
             <div className="inline-block px-4 py-2 rounded-lg bg-primary/10 border-2 border-primary/20">
               <p className="text-lg font-display font-semibold text-primary">
-                ARGOS solves both: Fast provisional results + Economic finality
+                ARGOS breaks the trilemma: Instant provisional results + Cryptoeconomic finality + Decentralized swarm
               </p>
             </div>
           </motion.div>
@@ -167,7 +166,7 @@ export default function Home() {
           >
             <h2 className="font-display text-4xl font-bold mb-4">Four Core Innovations</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Evolution, not revolution
+              How ARGOS achieves the impossible
             </p>
           </motion.div>
 
@@ -208,7 +207,7 @@ export default function Home() {
           >
             <h2 className="font-display text-4xl font-bold mb-4">How It Works</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Five phases of evolutionary consensus
+              From query to consensus in five lightning-fast phases
             </p>
           </motion.div>
 
@@ -271,7 +270,7 @@ export default function Home() {
           >
             <h2 className="font-display text-4xl font-bold mb-4">Neural Architecture</h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Four layers working in harmony
+              Four interconnected layers that make the magic happen
             </p>
           </motion.div>
 
@@ -310,9 +309,9 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center max-w-3xl mx-auto"
           >
-            <h2 className="font-display text-4xl font-bold mb-4">Join the Evolution</h2>
+            <h2 className="font-display text-4xl font-bold mb-4">Ready to Join the Swarm?</h2>
             <p className="text-xl text-muted-foreground mb-8">
-              Deploy your first ION node and become part of the swarm intelligence network
+              Deploy your first ION node and start earning rewards for accurate predictions. The network is live.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link to="/register">
